@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/TimoFreiberg/bultitude.svg?branch=master)](http://travis-ci.org/TimoFreiberg/bultitude)
 [![Clojars Project](https://img.shields.io/clojars/v/timofreiberg/bultitude.svg)](https://clojars.org/timofreiberg/bultitude)
 
-`[timofreiberg/bultitude "0.3.0"]`
+`[timofreiberg/bultitude "0.3.1"]`
 
 Bultitude is a library for finding namespaces on the classpath.
 
@@ -27,6 +27,9 @@ Value for :classpath can either be a String containing paths (using the underlyi
 By default Bultitude will ignore files that have unreadable `ns` forms in them in order not to cause problems with projects that include [moustache templates](https://github.com/davidsantiago/stencil) on their classpath. Most functions take an `ignore-unreadable?` arg which you can set to false to make it propagate exceptions from the reader.
 
 ## Changelog
+
+#### 0.3.1
+- Bultitude now uses `org.clojure/java.classpath` instead of `dynapath`, which also works with JDK 9 and higher.
 
 #### 0.3.0
 * Bultitude now also finds `in-ns` forms in addition to `ns` forms which is a 100% increase!
